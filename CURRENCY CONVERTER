@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class CurrencyConverter {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the currency to convert from: ");
+        String fromCurrency = scanner.nextLine();
+
+        System.out.print("Enter the currency to convert to: ");
+        String toCurrency = scanner.nextLine();
+
+        System.out.print("Enter the exchange rate from " + fromCurrency + " to " + toCurrency + ": ");
+        double exchangeRate = scanner.nextDouble();
+
+        System.out.print("Enter the amount in " + fromCurrency + ": ");
+        double amountToConvert = scanner.nextDouble();
+
+        double convertedAmount = convertCurrency(amountToConvert, exchangeRate);
+
+        System.out.println(amountToConvert + " " + fromCurrency + " is equal to " + convertedAmount + " " + toCurrency);
+
+        scanner.close();
+    }
+
+    private static double convertCurrency(double amount, double exchangeRate) {
+        return amount * exchangeRate;
+    }
+}
